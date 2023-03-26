@@ -6,14 +6,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
     <div class="wrapp">
-        <h1> <span>Hi my name Yura</span> and I</h1><br>
+        <h1 class="start"> <span class="Span">Hi my name Yura</span> and I</h1><br>
         <p class="typedJs" id="typedJs"></p>
     </div>
-<div class="wrap" id="wrap">
+<!-- <div class="wrap" id="wrap">
    <div class="navigation">
       <ul class="omni">
            <li class="list active">
@@ -49,8 +50,8 @@
            <div class="indecator"></div>
        </ul>
    </div>
-</div>
-<div class="wrap2" id="wrap2">
+</div> -->
+<!-- <div class="wrap2" id="wrap2">
    <ul class="nim">
        <li  style="&#45;&#45;i:7; &#45;&#45;clr:#1877f2;" class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-facebook-f"></i></span>Facebook</a></li>
        <li style="&#45;&#45;i:6; &#45;&#45;clr:#25d366;"class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-whatsapp"></i></span>Whatsapp</a></li>
@@ -60,8 +61,8 @@
        <li style ="&#45;&#45;i:2; &#45;&#45;clr:#0a66c2;"class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-linkedin"></i></span>Linkedin</a></li>
        <li style="&#45;&#45;i:1; &#45;&#45;clr:#5D5F62;"class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-tiktok"></i></span>Tik tok</a></li>
    </ul>
-</div>
-<div class="wrap1" id="wrap1">
+</div> -->
+<!-- <div class="wrap1" id="wrap1">
    <div class="container" id="container">
            <div class="card">
                <div class="content">
@@ -86,8 +87,11 @@
                </div>
            </div>
        </div>
+     
 </div>
-<div class="particl" id="particl"></div>
+</div> -->
+<div class="particl" id="particl">
+  <div class="part" id="part"></div>
 <script src="main.js"></script>
 <script type="text/javascript" src="vanilla-tilt.js"></script>
 <script>  VanillaTilt.init(document.querySelectorAll(".card"), {
@@ -97,6 +101,165 @@
     "max-glare": 1,
 
 });
+let typed = new Typed('.typedJs', {
+    strings: ["" ,"like coding", "like music", "like and watch video"],
+    // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+    stringsElement: null,
+    // typing speed
+    typeSpeed: 40,
+    // time before typing starts
+    startDelay: 1200,
+    // backspacing speed
+    backSpeed: 20,
+    // time before backspacing
+    backDelay: 500,
+    // loop
+    loop: true,
+    // false = infinite
+    loopCount: 5,
+    // show cursor
+    showCursor: false,
+    // character for cursor
+    cursorChar: "|",
+    // attribute to type (null == text)
+    attr: null,
+    // either html or text
+    contentType: 'html',
+    // call when done callback function
+    callback: function() {},
+    // starting callback function before each string
+    preStringTyped: function() {},
+    //callback for every typed string
+    onStringTyped: function() {},
+    // callback for reset
+    resetCallback: function() {}
+});
+particlesJS("part", {
+  "particles": {
+    "number": {
+      "value": 150,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+
+
+
+
+let count_particles, stats, update;
+
+
+count_particles = document.querySelector('.js-count-particles');
+update = function() {
+ 
+  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+   
+  }
+  requestAnimationFrame(update);
+};
+requestAnimationFrame(update);
 </script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
