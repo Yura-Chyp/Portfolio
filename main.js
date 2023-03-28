@@ -7,3 +7,7 @@ function activeLink (){
 list.forEach((item) =>
 item.addEventListener('click',activeLink));
 
+MenuBar.oclick = function(){
+    wrapp.style.display = 'none';
+    particl.style.display = 'none';
+}

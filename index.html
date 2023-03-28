@@ -10,11 +10,16 @@
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-    <div class="wrapp">
-        <h1 class="start"> <span class="Span">Hi my name Yura</span> and I</h1><br>
+    <div class="wrapp" id="wrapp">
+      <div class="top" id="MenuBar">
+        <img src="./img/menu-bar.png" alt="menu" class="MenuBar" >
+      </div>
+        <div class="center">
+          <h1 class="start"> <span class="Span">Hi my name Yura</span> and I</h1><br>
         <p class="typedJs" id="typedJs"></p>
+        </div>
     </div>
-<!-- <div class="wrap" id="wrap">
+<div class="wrap" id="wrap">
    <div class="navigation">
       <ul class="omni">
            <li class="list active">
@@ -50,7 +55,7 @@
            <div class="indecator"></div>
        </ul>
    </div>
-</div> -->
+</div>
 <!-- <div class="wrap2" id="wrap2">
    <ul class="nim">
        <li  style="&#45;&#45;i:7; &#45;&#45;clr:#1877f2;" class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-facebook-f"></i></span>Facebook</a></li>
@@ -92,9 +97,16 @@
 </div> -->
 <div class="particl" id="particl">
   <div class="part" id="part"></div>
+</div>
 <script src="main.js"></script>
 <script type="text/javascript" src="vanilla-tilt.js"></script>
-<script>  VanillaTilt.init(document.querySelectorAll(".card"), {
+<script> 
+MenuBar.onclick = function(){
+    wrapp.style.display = 'none';
+    particl.style.display = 'none';
+    wrap.style.display = 'flex';
+}
+VanillaTilt.init(document.querySelectorAll(".card"), {
     max: 25,
     speed: 400,
     glare: true,
