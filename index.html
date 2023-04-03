@@ -30,21 +30,16 @@
            </li>
            <li class="list">
                <a href="#" class="btn" id="BtnProfile">
+                   <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
+                   <span class="text">Projects</span>
+               </a>
+           </li>
+           
+           <li class="list">
+               <div class="btn" id="BtnPhoto">
                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                   <span class="text">Profile</span>
-               </a>
-           </li>
-           <li class="list">
-               <a href="#" class="btn" id="BtnMassage">
-                   <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                   <span class="text">Message</span>
-               </a>
-           </li>
-           <li class="list">
-               <a href="#" class="btn" id="BtnPhoto">
-                   <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
-                   <span class="text">Photos</span>
-               </a>
+                   <span class="text">Contacts</span>
+               </div>
            </li>
            <li class="list">
                <a href="#" class="btn" id="BtnSetting">
@@ -56,7 +51,7 @@
        </ul>
    </div>
 </div>
-<!-- <div class="wrap2" id="wrap2">
+<div class="wrap2" id="wrap2">
    <ul class="nim">
        <li  style="&#45;&#45;i:7; &#45;&#45;clr:#1877f2;" class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-facebook-f"></i></span>Facebook</a></li>
        <li style="&#45;&#45;i:6; &#45;&#45;clr:#25d366;"class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-whatsapp"></i></span>Whatsapp</a></li>
@@ -66,8 +61,8 @@
        <li style ="&#45;&#45;i:2; &#45;&#45;clr:#0a66c2;"class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-linkedin"></i></span>Linkedin</a></li>
        <li style="&#45;&#45;i:1; &#45;&#45;clr:#5D5F62;"class="nam"><a href="#" class="im"><span class="cho"><i class="fa-brands fa-tiktok"></i></span>Tik tok</a></li>
    </ul>
-</div> -->
-<!-- <div class="wrap1" id="wrap1">
+</div>
+<div class="wrap1" id="wrap1">
    <div class="container" id="container">
            <div class="card">
                <div class="content">
@@ -94,13 +89,20 @@
        </div>
      
 </div>
-</div> -->
+</div>
 <div class="particl" id="particl">
   <div class="part" id="part"></div>
 </div>
-<script src="main.js"></script>
 <script type="text/javascript" src="vanilla-tilt.js"></script>
+<script src="main.js"></script>
 <script> 
+VanillaTilt.init(document.querySelectorAll(".card"), {
+    max: 25,
+    speed: 400,
+    glare: true,
+    "max-glare": 1,
+
+});
 MenuBar.onclick = function(){
     wrapp.style.display = 'none';
     particl.style.display = 'none';
@@ -112,14 +114,17 @@ BtnHome.onclick = function(){
   particl.style.display = 'flex';
   wrap.style.display = 'none';
  }
+ BtnProfile.onclick = function(){
+  wrap.style.display = 'none';
+  particl.style.display = 'flex';
+  wrap1.style.display = 'flex';
+ }
+ BtnPhoto.onclick = function(){
+  wrap.style.display = 'none';
+  wrap2.style.display = 'flex';
+ }
 
-VanillaTilt.init(document.querySelectorAll(".card"), {
-    max: 25,
-    speed: 400,
-    glare: true,
-    "max-glare": 1,
 
-});
 let typed = new Typed('.typedJs', {
     strings: ["" ,"like coding", "like music", "like  watch video"],
     // Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
@@ -230,7 +235,7 @@ particlesJS("part", {
         "mode": "grab"
       },
       "onclick": {
-        "enable": true,
+        "enable": false,
         "mode": "push"
       },
       "resize": true
